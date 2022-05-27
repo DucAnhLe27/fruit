@@ -275,10 +275,11 @@ public class GameController : MonoBehaviour
                     {
                         //if it is, then we need to update the HighestScore... so we call UpdateHighestScore(GameVariables.ClassicModeScore)
                         UpdateHighestScore(GameVariables.ClassicModeScore);
+                        GemUniAPI.Instance.CallOnLimitScore(GameVariables.ClassicModeScore);
                     }
                     //and we update Player Experience by calling UpdatePlayerExperienceAndLevel and pass in GameVariables.ClassicModeScore.
                     UpdatePlayerExperienceAndLevel(GameVariables.ClassicModeScore);
-
+                    GemUniAPI.Instance.CallRequestSubmit();
                     //set gameIsRunning to false.
                     gameIsRunning = false;
 
